@@ -1,6 +1,9 @@
 import { HardhatUserConfig } from "hardhat/config";
+import "@openzeppelin/hardhat-upgrades";
 import "@nomicfoundation/hardhat-toolbox";
+import "solidity-coverage";
 import dotenv from "dotenv";
+dotenv.config();
 
 dotenv.config();
 const config: HardhatUserConfig = {
@@ -14,34 +17,24 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    testnet: {
+    atestnet: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       accounts: process.env.TESTNET_PRIVATE_KEY
         ? [process.env.TESTNET_PRIVATE_KEY]
         : [],
     },
-    base: {
-      url: "https://mainnet.base.org",
-      accounts: process.env.MAINNET_PRIVATE_KEY
-        ? [process.env.MAINNET_PRIVATE_KEY]
+    btestnet: {
+      url: "https://api-testnet.bscscan.com/api",
+      accounts: process.env.TESTNET_PRIVATE_KEY
+        ? [process.env.TESTNET_PRIVATE_KEY]
         : [],
     },
   },
   etherscan: {
     apiKey: {
       avalancheFujiTestnet: "YGUG682F3PQM5ESJFIQECZR6BTXG1XFPQG",
-      base: "J15TBU6MXRSA6GU4Y1IBYSH7BKB2JM2A48",
+      bscTestnet: "J15TBU6MXRSA6GU4Y1IBYSH7BKB2JM2A48",
     },
-    customChains: [
-      {
-        network: "base",
-        chainId: 8453,
-        urls: {
-          apiURL: "https://api.basescan.org/api",
-          browserURL: "https://basescan.org",
-        },
-      },
-    ],
   },
 };
 

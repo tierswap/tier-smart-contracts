@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
+    "@openzeppelin/contracts-upgradeable": "4.8.0",
+    "@openzeppelin/hardhat-upgrades": "^2.4.1",
     "@uniswap/lib": "^4.0.1-alpha"
   },
   "devDependencies": {
@@ -26,7 +28,7 @@
     "chai": "^4.2.0",
     "dotenv": "16.3.1",
     "ethers": "^6.4.0",
-    "hardhat": "^2.14.0",
+    "hardhat": "2.19.1",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.0",
     "ts-node": ">=8.0.0",
